@@ -1,7 +1,7 @@
 FROM alpine:3.2
 ENV EC2_INI_PATH=/etc/ansible/ec2.ini
 RUN apk add --update python py-pip ansible         && \
-  pip install boto                                 && \
+  pip install boto six                             && \
   pip install --upgrade pip                        && \
   rm -rf /var/cache/apk/*                          && \
   mkdir -p /etc/ansible
